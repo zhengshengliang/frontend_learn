@@ -41,5 +41,8 @@ xxx
 ➜  local cat xxx/index.html 
 <!DOCTYPE> 
 <title>Hello</title> 
-<h1>Hi</h1>%                                                                                ➜  local     
+<h1>Hi</h1>%                                                                               
+➜  local 
+
+有点奇怪为什么后面都带了`%` ？
 */
