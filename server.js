@@ -1,5 +1,16 @@
 // demo地址 http://www.zhengshengliang.com:9999/ 始终监听9999端口，并记录日志
 
+/**
+//全局安装
+npm install forever -g 
+//启动       
+forever start app.js  
+//输出日志和错误
+forever start -l forever.log -o out.log -e err.log app.js
+// 保持后端静默运行，监听9999端口
+sudo forever start server.js 9999
+**/
+
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
