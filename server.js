@@ -1,3 +1,5 @@
+// demo地址 http://www.zhengshengliang.com:9999/ 始终监听9999端口，并记录日志
+
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
