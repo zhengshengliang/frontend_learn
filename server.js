@@ -4,7 +4,7 @@
 //全局安装
 npm install forever -g 
 //启动       
-forever start app.js  
+forever start server.js  
 //输出日志和错误
 forever start -l forever.log -o out.log -e err.log server.js 9999
 // 保持后端静默运行，监听9999端口
