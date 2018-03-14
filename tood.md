@@ -37,3 +37,9 @@ if (this.state.checked) {
 ```
 let setDefaultWh = this.checked ? 1 : 0
 ```
+
+
+sass  synatac awesome style sheet
+手机上适配 用 rem
+ sass里可以用函数转换rem
+ 安装需要ruby 或使用淘宝镜像
