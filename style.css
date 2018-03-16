@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.clearfix::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+body {
+	background-color: black;
+}
+
+.top-nav-bar > nav > ul > li {
+	float: right;
+	margin-right: 15px;
+}
+
+.top-nav-bar > nav > ul > li > a {
+	text-decoration: none;
+}
+
+.top-nav-bar > nav > ul > li > a:hover {
+	border-bottom: 4px solid red;
+}
