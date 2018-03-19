@@ -13,15 +13,48 @@ body {
 	background-color: black;
 }
 
-.top-nav-bar > nav > ul > li {
-	float: right;
-	margin-right: 15px;
-}
-
-.top-nav-bar > nav > ul > li > a {
+a {
 	text-decoration: none;
 }
 
+.top-nav-bar {
+	padding: 20px 16px;
+}
+
+.top-nav-bar .logo {
+	float: left;
+	font-family: 'Arial Black';
+	font-size: 24px;
+	padding-top: 3px;
+	padding-bottom: 4px;
+}
+
+.top-nav-bar .rs {
+	color: #e6686a;
+	margin-right: 4px
+}
+
+.top-nav-bar .card {
+	color: #9a9da2;
+}
+
+.top-nav-bar nav {
+	font-size: 12px;
+	float: right;
+	padding: 12px;
+}
+
+.top-nav-bar > nav > ul > li {
+	float: left;
+	margin: 0 17px;
+}
+
+.top-nav-bar > nav > ul > li > a {
+	color: rgba(255, 255, 255, 0.7);
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+
 .top-nav-bar > nav > ul > li > a:hover {
-	border-bottom: 4px solid red;
+	border-bottom: 3px solid #DC6465;
 }
