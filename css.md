@@ -40,12 +40,15 @@ HTML结构为 div.parent > div.child，如果 div.parent 的样式为 width: 100
 ```
 
 结果为：
+
 [![cover](images/WX20180320-204352.png)](images/WX20180320-204352.png)
 
 div.first盒模型
+
 [![cover](images/WX20180320-205625.png)](images/WX20180320-205625.png)
 
 div.second盒模型
+
 [![cover](images/WX20180320-205715.png)](images/WX20180320-205715.png)
 
 
