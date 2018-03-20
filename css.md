@@ -40,7 +40,7 @@ HTML结构为 div.parent > div.child，如果 div.parent 的样式为 width: 100
 ```
 
 
-// 笔记
+## 其他笔记
 1. css href
 2. 四种方式
 3. ul list-style: none
