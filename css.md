@@ -1,5 +1,4 @@
 ## css标准盒模型理解
-================
 
 思考题：
 HTML结构为 div.parent > div.child，如果 div.parent 的样式为 width: 100px; padding: 10px;
