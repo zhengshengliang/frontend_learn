@@ -1,3 +1,46 @@
+## css标准盒模型理解
+
+思考题：
+HTML结构为 div.parent > div.child，如果 div.parent 的样式为 width: 100px; padding: 10px;
+那么请问 div.child 所占的宽度为多少 px ？
+
+
+```
+## html 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+<div class=first>
+  <div class=second>
+  </div>
+</div>
+</body>
+</html>
+```
+
+```
+## css
+.first {
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.second {
+  border: 1px solid green;
+  height: 100%;
+  width: 100%;
+}
+```
+
+
+## 其他笔记
 1. css href
 2. 四种方式
 3. ul list-style: none
