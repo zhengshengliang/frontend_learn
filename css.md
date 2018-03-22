@@ -38,7 +38,32 @@ HTML结构为 div.parent > div.child，如果 div.parent 的样式为 width: 100
   width: 100%;
 }
 ```
+
+结果为：
+
 [![cover](images/WX20180320-204352.png)](images/WX20180320-204352.png)
+
+div.first盒模型
+
+[![cover](images/WX20180320-205625.png)](images/WX20180320-205625.png)
+
+div.second盒模型
+
+[![cover](images/WX20180320-205715.png)](images/WX20180320-205715.png)
+
+自己的理解
+```
+.first {
+  border: 1px solid red; // border 黑色实线
+  width: 100px; // content width 蓝色 100* 100
+  height: 100px; // content height
+  padding: 10px; // 浅绿色
+  margin: 20px; // border外的橘黄色 
+}
+因为div.first content的宽高都为100px，所以：div.second的宽高也为100px。
+主要width，只针对content,在标准盒模型中，padding，border，margin都不算在宽高中。
+```
+
 
 ## 其他笔记
 1. css href
