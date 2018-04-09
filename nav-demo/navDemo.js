@@ -1,5 +1,3 @@
-
-
 class navDemo {
     constructor() {
 
@@ -23,14 +21,16 @@ class navDemo {
 
         this.generateKeyBoard();
 
-        this.addEvent();
+        this.bindEvent();
     }
 
     /**
      * 添加事件
      */
-    addEvent() {
-        document.onkeydown = (e) => {
+    bindEvent() {
+        // todo onkeydown onkeypress
+        document.onkeypress = (e) => {
+            console.log(e);
             const key = e.key;
             const domain = this.defaultHash[key];
             domain && window.open('http://' + domain);
@@ -41,7 +41,6 @@ class navDemo {
      * 生成键盘布局
      */
     generateKeyBoard() {
-        const content = document.getElementById('content');
         this.keys.forEach((outItem, outIndex) => {
             const div = document.createElement('div');
             div.className = 'out-div';

@@ -3,7 +3,38 @@
     padding: 0;
 }
 
-body {
+a {
+    text-decoration: none;
+}
+
+kbd {
+    border: 1px solid red;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+}
+
+/*
+    内联元素居中，在父元素上添加text-align: center;
+*/
+main {
+    text-align: center
+}
+
+.wrapper {
+    display: inline-block;
+}
+
+#content > div:nth-child(2) {
+    margin-left: 1em;
+}
+
+#content > div:nth-child(3) {
+    margin-left: 3em;
+}
+
+
+/*body {
     background: grey url(./wall.jpg) no-repeat center center;
 }
 
@@ -17,7 +48,7 @@ body {
 
 
 #content .inner-span {
-    /*display: inline-block;*/
+    display: inline-block;
     padding: 20px;
 }
 
@@ -37,4 +68,4 @@ body {
     position: relative;
     font-size: 16px;
     font-family: Helvetica;
-}
+}*/
