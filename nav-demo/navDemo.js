@@ -19,9 +19,17 @@ class navDemo {
             w: 'weibo.com',
         };
 
+        this.getHashFromLocalStorage();
+
         this.generateKeyBoard();
 
         this.bindEvent();
+    }
+
+    getHashFromLocalStorage() {
+        const savedHashStr = localStorage.getItem('hash');
+        const savedHash = savedHashStr ? JSON.parse(savedHashStr) : this.defaultHash;
+        this.defaultHash = savedHash;
     }
 
     /**
@@ -46,18 +54,26 @@ class navDemo {
             div.className = 'out-div';
             outItem.forEach((innerItem, innerIndex) => {
                 const kbd = document.createElement('kbd');
-                kbd.innerText = this.keys[outIndex][innerIndex];
-                kbd.className = 'inner-kbd'
+                kbd.textContent = this.keys[outIndex][innerIndex];
+                kbd.className = 'key';
+
+                const button = document.createElement('button');
+                button.textContent = '编辑';
+                button.id = innerItem;
+                button.onclick = (e) => {
+                    const key = e.target.id;
+                    const web = prompt('给我一个网站');
+                    this.defaultHash[key] = web;
+                    localStorage.setItem('hash', JSON.stringify(this.defaultHash));
+                }
+
+                kbd.appendChild(button);
+
                 div.appendChild(kbd);
 
             })
             content.appendChild(div);
         })
-    }
-
-
-    getFromLocalStorage() {
-
     }
 }
 
