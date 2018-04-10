@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcbfe004-b413-45ce-9533-a0a965ea8c7a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nav-demo/index.html" afterPath="$PROJECT_DIR$/nav-demo/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nav-demo/navDemo.css" afterPath="$PROJECT_DIR$/nav-demo/navDemo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nav-demo/navDemo.js" afterPath="$PROJECT_DIR$/nav-demo/navDemo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/笔记.md" afterPath="$PROJECT_DIR$/笔记.md" />
-    </list>
+    <list default="true" id="fcbfe004-b413-45ce-9533-a0a965ea8c7a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />

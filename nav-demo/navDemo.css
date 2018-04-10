@@ -65,13 +65,28 @@ kbd:hover > button {
     border-radius: 7px;
     border: 1px solid #373737;
     font-size: 16px;
-    line-height: 40px;
+    /*line-height: 40px;*/
     font-family: Helvatical;
     width: 50px;
     height: 40px;
     color: #C5C5C5;
     background: linear-gradient(to bottom, #292929 0%,#111111 100%);
     box-shadow: 0 0 0 1px #1A1B1C, 0 0 0 2px #1F2020, 0 2px 0 2px #1F2020;
+    position: relative;;
+}
+
+.key .icon-img {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 4px;
+    bottom: 2px;
+}
+
+.key .text {
+    position: absolute;
+    left: 4px;
+    top: 2px;
 }
 
 .out-div {

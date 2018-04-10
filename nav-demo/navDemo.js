@@ -17,6 +17,7 @@ class navDemo {
             j: 'jd.com',
             q: 'qq.com',
             w: 'weibo.com',
+            y: 'youtube.com'
         };
 
         this.getHashFromLocalStorage();
@@ -53,13 +54,25 @@ class navDemo {
             const div = document.createElement('div');
             div.className = 'out-div';
             outItem.forEach((innerItem, innerIndex) => {
+                const span = document.createElement('span');
+                span.textContent = this.keys[outIndex][innerIndex];
+                span.className = 'text';
+
                 const kbd = document.createElement('kbd');
-                kbd.textContent = this.keys[outIndex][innerIndex];
+                kbd.appendChild(span);
                 kbd.className = 'key';
 
+                const img = document.createElement('img');
+                img.className = 'icon-img'
+                const domain = this.defaultHash[kbd.textContent];
+                if (domain) {
+                    img.src = 'http://' + domain + '/favicon.ico';
+                } else {
+                    img.src  = '//i.loli.net/2017/11/10/5a05afbc5e183.png';
+                }
+                
                 const button = document.createElement('button');
                 button.textContent = '编辑';
-                button.id = innerItem;
                 button.onclick = (e) => {
                     const key = e.target.id;
                     const web = prompt('给我一个网站');
@@ -67,10 +80,10 @@ class navDemo {
                     localStorage.setItem('hash', JSON.stringify(this.defaultHash));
                 }
 
+                kbd.appendChild(img);
                 kbd.appendChild(button);
 
                 div.appendChild(kbd);
-
             })
             content.appendChild(div);
         })
