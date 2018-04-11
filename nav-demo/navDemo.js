@@ -14,10 +14,11 @@ class navDemo {
         ];
 
         this.defaultHash = {
-            j: 'jd.com',
             q: 'qq.com',
             w: 'weibo.com',
-            y: 'youtube.com'
+            y: 'youtube.com',
+            t: 'tianya.com',
+            z: 'zhengshengliang.com'
         };
 
         this.getHashFromLocalStorage();
@@ -63,19 +64,29 @@ class navDemo {
                 kbd.className = 'key';
 
                 const img = document.createElement('img');
+
                 img.className = 'icon-img'
                 const domain = this.defaultHash[kbd.textContent];
                 if (domain) {
                     img.src = 'http://' + domain + '/favicon.ico';
                 } else {
-                    img.src  = '//i.loli.net/2017/11/10/5a05afbc5e183.png';
+                    img.src  = 'https://i.loli.net/2017/11/10/5a05afbc5e183.png';
+                }
+
+                img.onerror = (e) => {
+                    e.target.src = 'https://i.loli.net/2017/11/10/5a05afbc5e183.png';
                 }
                 
                 const button = document.createElement('button');
+                button.id = this.keys[outIndex][innerIndex];
                 button.textContent = '编辑';
                 button.onclick = (e) => {
                     const key = e.target.id;
                     const web = prompt('给我一个网站');
+
+                    const img = e.target.previousSibling;
+                    img.src = 'http://' + web + '/favicon.ico';
+
                     this.defaultHash[key] = web;
                     localStorage.setItem('hash', JSON.stringify(this.defaultHash));
                 }
