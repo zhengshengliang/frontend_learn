@@ -13,26 +13,39 @@ class navDemo {
             ['z', 'x', 'c', 'v', 'b', 'n', 'm']
         ];
 
-        const defaultHash = {
+        this.defaultHash = {
             q: 'qq.com',
             w: 'weibo.com',
             y: 'youtube.com',
             t: 'tianya.com',
             z: 'zhengshengliang.com'
         };
-        const storageHash = this.getHashFromLocalStorage('hash');
-        this.activeHash = {...defaultHash, ...storageHash};
+
+        this.getHashFromLocalStorage();
+
+        this.generateKeyBoard();
 
         this.bindEvent();
     }
 
-    getHashFromLocalStorage(key) {
-        const savedHashStr = localStorage.getItem(key);
+    getHashFromLocalStorage() {
+        const savedHashStr = localStorage.getItem('hash');
         const savedHash = savedHashStr ? JSON.parse(savedHashStr) : this.defaultHash;
-        return savedHash;
+        this.defaultHash = savedHash;
     }
 
-
+    /**
+     * 添加事件
+     */
+    bindEvent() {
+        // todo onkeydown onkeypress
+        document.onkeypress = (e) => {
+            console.log(e);
+            const key = e.key;
+            const domain = this.defaultHash[key];
+            domain && window.open('http://' + domain);
+        }
+    }
 
     /**
      * 生成键盘布局
@@ -53,9 +66,9 @@ class navDemo {
                 const img = document.createElement('img');
 
                 img.className = 'icon-img'
-                const domain = this.activeHash[kbd.textContent];
+                const domain = this.defaultHash[kbd.textContent];
                 if (domain) {
-                    img.src = 'http://www.' + domain + '/favicon.ico';
+                    img.src = 'http://' + domain + '/favicon.ico';
                 } else {
                     img.src  = 'https://i.loli.net/2017/11/10/5a05afbc5e183.png';
                 }
@@ -85,19 +98,6 @@ class navDemo {
             })
             content.appendChild(div);
         })
-    }
-
-        /**
-     * 添加事件
-     */
-    bindEvent() {
-        // todo onkeydown onkeypress
-        document.onkeypress = (e) => {
-            console.log(e);
-            const key = e.key;
-            const domain = this.defaultHash[key];
-            domain && window.open('http://' + domain);
-        }
     }
 }
 
