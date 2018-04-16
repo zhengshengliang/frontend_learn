@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcbfe004-b413-45ce-9533-a0a965ea8c7a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nav-demo/test.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nav-demo/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nav-demo/navDemo.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nav-demo/navDemo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nav-demo/navDemo_back.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nav-demo/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nav-demo/wall.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nav-demo/index.html" afterPath="$PROJECT_DIR$/nav-demo/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nav-demo/navDemo.js" afterPath="$PROJECT_DIR$/nav-demo/navDemo.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/笔记.md" afterPath="$PROJECT_DIR$/笔记.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,58 +27,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nav-demo/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navDemo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nav-demo/navDemo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1394">
-              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-              <folding>
-                <marker date="1523457572000" expanded="true" signature="3045:3051" ph="{...}" />
-                <marker date="1523457572000" expanded="true" signature="3045:3053" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navDemo.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nav-demo/navDemo.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="笔记.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="笔记.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/笔记.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="238">
-                <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <first_editor relative-caret-position="255">
+                <caret line="61" column="16" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
                 <folding />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nav-demo/test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -107,8 +67,8 @@
         <option value="$PROJECT_DIR$/nav-demo/index.html" />
         <option value="$PROJECT_DIR$/nav-demo/navDemo.js" />
         <option value="$PROJECT_DIR$/nav-demo/navDemo.css" />
-        <option value="$PROJECT_DIR$/笔记.md" />
         <option value="$PROJECT_DIR$/nav-demo/test.js" />
+        <option value="$PROJECT_DIR$/笔记.md" />
       </list>
     </option>
   </component>
@@ -127,8 +87,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1440" />
-    <option name="y" value="189" />
-    <option name="width" value="1348" />
+    <option name="y" value="-315" />
+    <option name="width" value="1200" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectView">
@@ -154,11 +114,6 @@
             <path>
               <item name="frontend_learn" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend_learn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend_learn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend_learn" type="462c0819:PsiDirectoryNode" />
-              <item name="nav-demo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -208,11 +163,12 @@
       <workItem from="1521166960747" duration="45000" />
       <workItem from="1522335205920" duration="13254000" />
       <workItem from="1523167016987" duration="731000" />
+      <workItem from="1523535648349" duration="601000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14319000" />
+    <option name="totallyTimeSpent" value="14920000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -224,10 +180,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="189" width="1348" height="877" extended-state="0" />
-    <editor active="true" />
+    <frame x="1440" y="-315" width="1200" height="877" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1951771" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19508058" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -261,6 +216,49 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/nav-demo/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nav-demo/navDemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nav-demo/navDemo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nav-demo/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/笔记.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="238">
+            <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nav-demo/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
@@ -271,10 +269,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
-          <folding>
-            <marker date="1523457572000" expanded="true" signature="3045:3051" ph="{...}" />
-            <marker date="1523457572000" expanded="true" signature="3045:3053" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -382,7 +377,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nav-demo/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="0">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
@@ -392,10 +387,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1394">
           <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding>
-            <marker date="1523457572000" expanded="true" signature="3045:3051" ph="{...}" />
-            <marker date="1523457572000" expanded="true" signature="3045:3053" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -407,22 +399,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/笔记.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="238">
-            <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nav-demo/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/笔记.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="255">
+            <caret line="61" column="16" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
