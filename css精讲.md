@@ -40,8 +40,11 @@ parent: padding-top: 20px; padding-buttom: 20px
 
 
 
+flex布局很重要
 
 parent高度确定就很难搞~~
+
+垂直居中的秘诀：一定不要把父元素的高度写死~~~
 
 
 
