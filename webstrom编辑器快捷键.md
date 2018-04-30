@@ -35,5 +35,15 @@ po:a => position: absolute;
 html => <!DOCTYPE html>
 
 
+ul>li[id=item$]{选项$} * 6
+
+  <ul>
+    <li id="item1">选项1</li>
+    <li id="item2">选项2</li>
+    <li id="item3">选项3</li>
+    <li id="item4">选项4</li>
+    <li id="item5">选项5</li>
+    <li id="item6">选项6</li>
+  </ul>
 
 
