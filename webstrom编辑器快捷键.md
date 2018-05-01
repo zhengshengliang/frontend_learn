@@ -18,6 +18,7 @@ sublime/网页 command + '+' 能放大缩小
 
 
 jsbin 快捷键
+command + shirf
 w => width;
 h => height
 bg => background;
