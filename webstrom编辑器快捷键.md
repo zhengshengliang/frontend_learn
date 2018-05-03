@@ -1,3 +1,14 @@
+mac快捷键
+command + option + c // 快速开启浏览器控制台
+option + command + j // 快速开启或关闭浏览器控制台
+控制台按下esc可调整动画时间
+command + z 撤销
+command + shift + z 反撤销
+sublime/网页 command + '+' 能放大缩小
+
+
+
+webstrom快捷键
 ## 一个id为app的div
 ```
 div#app => <div id="app"></div>
@@ -10,15 +21,26 @@ div#app => <div id="app"></div>
 
 item.log => console.log(item);
 
-command + option + c 快速开启浏览器控制台
+## oh my zsl alias 配置
+➜  ~ vi .zshrc
+➜  ~ source .zshrc
+ga .
+gc
+gp
 
-command + z 撤销
-command + shift + z 反撤销
-sublime/网页 command + '+' 能放大缩小
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gco="git checkout"
+
+
+➜  ~ where ga
+ga: aliased to git add
+
 
 
 jsbin 快捷键
-command + shirf
+command + shift
 w => width;
 h => height
 bg => background;
@@ -35,9 +57,15 @@ po:a => position: absolute;
 
 html => <!DOCTYPE html>
 
+div[id=item$]{选项$}* 6
+    <div id="item1">选项1</div>
+    <div id="item2">选项2</div>
+    <div id="item3">选项3</div>
+    <div id="item4">选项4</div>
+    <div id="item5">选项5</div>
+    <div id="item6">选项6</div>
 
 ul>li[id=item$]{选项$} * 6
-
   <ul>
     <li id="item1">选项1</li>
     <li id="item2">选项2</li>
@@ -46,5 +74,10 @@ ul>li[id=item$]{选项$} * 6
     <li id="item5">选项5</li>
     <li id="item6">选项6</li>
   </ul>
+
+button#p${第$张} * 3
+  <button id="p1">第1张</button>
+  <button id="p2">第2张</button>
+  <button id="p3">第3张</button>
 
 
