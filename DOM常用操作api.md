@@ -29,7 +29,7 @@ Node有一个属性nodeType表示Node的类型，它是一个整数，其数值�
 假设我们要判断一个Node是不是元素，我们可以这样判断
 
 ```
-if(someNode.nodeType == Node.ELEMENT_NODE){
+if(someNode.nodeType == Node.ELEMENT_NODE) {
 	console.log("Node is a element");
 }
 ```
