@@ -4,10 +4,8 @@ date: 2018-11-30 23:46:59
 tags: dom
 categories: Javascript
 description: 文本整理了javascript操作DOM的一些常用的api，根据其作用整理成为创建，修改，查询等多种类型的api，主要用于复习基础知识，加深对原生js的认识。
-
 -->
 
----
 现在基本都用vue,react等框架，疏于对原生dom api的学习，此文用做积累学习。
 参考网址 http://luopq.com/2015/11/30/javascript-dom/
 ### 基本概念
@@ -16,36 +14,36 @@ description: 文本整理了javascript操作DOM的一些常用的api，根据其
 DOM1级定义了一个Node接口，该接口由DOM中所有节点类型实现。这个Node接口在JS中是作为Node类型实现的。在IE9以下版本无法访问到这个类型，JS中所有节点都继承自Node类型，都共享着相同的基本属性和方法。
 Node有一个属性nodeType表示Node的类型，它是一个整数，其数值分别表示相应的Node类型，具体如下：
 
-元素节点 
-```
-Node.ELEMENT_NODE:1
-Node.ATTRIBUTE_NODE:2
-Node.TEXT_NODE:3
-Node.CDATA_SECTION_NODE:4
-Node.ENTITY_REFERENCE_NODE:5
-Node.ENTITY_NODE:6
-Node.PROCESSING_INSTRUCTION_NODE:7
-Node.COMMENT_NODE:8
-Node.DOCUMENT_NODE:9
-Node.DOCUMENT_TYPE_NODE:10
-Node.DOCUMENT_FRAGMENT_NODE:11
-Node.NOTATION_NODE:12
-```
+示例方法：
+
+| 返回参数名 | value | 描述 |
+| -----------  | ------ | ------|
+| Node.ELEMENT_NODE | 1 | 一个元素(element)节点，div span p...
+| Node.TEXT_NODE | 3 | 文字节点 document.body.childNodes,一个回车也算一个文本节点,基本每隔一个节点就有一个Text; document.body.children(不包含Text节点);document.body.childNodes(包含Text节点)
+| Node.PROCESSING\_INSTRUCTION_NODE | 7 | xml相关
+| Node.COMMENT_NODE | 8 | Comment节点，也就是注释
+| Node.DOCUMENT_NODE | 9 | Document节点
+| Node.DOCUMENT_TYPE_NODE | 10 | 描述文档类型的 DocumentType 节点。例如 <!DOCTYPE html>  就是用于 HTML5 的。
+| Node.DOCUMENT_FRAGMENT_NODE | 11 | 一个 DocumentFragment 节点节点
+
 假设我们要判断一个Node是不是元素，我们可以这样判断
+
 ```
-if(someNode.nodeType == 1){
-console.log("Node is a element");
+if(someNode.nodeType == Node.ELEMENT_NODE){
+	console.log("Node is a element");
 }
 ```
 这些Node类型中，我们最常用的就是element，text，attribute，comment，document，document_fragment这几种类型。
 我们简单来介绍一下这几种类型：
+
 #### Element类型
 Element提供了对元素标签名，子节点和特性的访问，我们常用HTML元素比如div，span，a等标签就是element中的一种。Element有下面几条特性：
-（1）nodeType为1
-（2）nodeName为元素标签名，tagName也是返回标签名
-（3）nodeValue为null
-（4）parentNode可能是Document或Element
-（5）子节点可能是Element，Text，Comment，Processing_Instruction，CDATASection或EntityReference
+
+1. nodeType为1
+2. nodeName为元素标签名，tagName也是返回标签名
+3. nodeValue为null
+4. parentNode可能是Document或Element
+5. 子节点可能是Element，Text，Comment，Processing_Instruction，CDATASection或EntityReference
 
 #### Text类型
 Text表示文本节点，它包含的是纯文本内容，不能包含html代码，但可以包含转义后的html代码。Text有下面的特性：
