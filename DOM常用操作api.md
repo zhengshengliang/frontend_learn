@@ -107,9 +107,9 @@ createTextNode接收一个参数，这个参数就是文本节点中的文本，
 #### cloneNode
 cloneNode是用来返回调用方法的节点的一个副本，它接收一个bool参数，用来表示是否复制子元素，使用如下：
 ```
-        var parent = document.getElementById("parentElement"); 
-        var parent2 = parent.cloneNode(true);// 传入true
-        parent2.id = "parent2";
+	var parent = document.getElementById("parentElement"); 
+	var parent2 = parent.cloneNode(true);// 传入true
+	parent2.id = "parent2";
 ```
 这段代码通过cloneNode复制了一份parent元素，其中cloneNode的参数为true，表示parent的子节点也被复制，如果传入false，则表示只复制了parent节点。
 我们看看这个[例子](http://runjs.cn/detail/s2yelqet)
