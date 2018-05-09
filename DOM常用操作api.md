@@ -16,25 +16,36 @@ Node有一个属性nodeType表示Node的类型，它是一个整数，其数值�
 
 示例方法：
 
+```
+<body>
+	<div></div>
+</body>
+```
+
+div nodeType === 1
+div.parentNode === body nodeType === 1
+div.parentNode.parentNode === body nodeType === 1
+div.parentNode.parentNode.parentNode === html nodeType === 1
+div.parentNode.parentNode.parentNode.parent === document nodeType === 9
+
 | 返回参数名 | value | 描述 |
 | -----------  | ------ | ------|
-| Node.ELEMENT_NODE | 1 | 一个元素(element)节点，div span p...
+| Node.ELEMENT_NODE | 1 | 一个元素(element)节点，body div span p... 
 | Node.TEXT_NODE | 3 | 文字节点 document.body.childNodes,一个回车也算一个文本节点,基本每隔一个节点就有一个Text; document.body.children(不包含Text节点);document.body.childNodes(包含Text节点)
 | Node.PROCESSING\_INSTRUCTION_NODE | 7 | xml相关
 | Node.COMMENT_NODE | 8 | Comment节点，也就是注释
 | Node.DOCUMENT_NODE | 9 | Document节点
-| Node.DOCUMENT_TYPE_NODE | 10 | 描述文档类型的 DocumentType 节点。例如 <!DOCTYPE html>  就是用于 HTML5 的。
+| Node.DOCUMENT\_TYPE_NODE | 10 | 描述文档类型的 DocumentType 节点。例如 <!DOCTYPE html>  就是用于 HTML5 的。
 | Node.DOCUMENT_FRAGMENT_NODE | 11 | 一个 DocumentFragment 节点节点
 
 假设我们要判断一个Node是不是元素，我们可以这样判断
-
 
 ```
 if(someNode.nodeType == Node.ELEMENT_NODE) {
 	console.log("Node is a element");
 }
 ```
-这些Node类型中，我们最常用的就是element，text，attribute，comment，document，document_fragment这几种类型。
+这些Node类型中，我们最常用的就是element，text，comment，document，document_fragment这几种类型。
 我们简单来介绍一下这几种类型：
 
 #### Element类型
@@ -48,41 +59,51 @@ Element提供了对元素标签名，子节点和特性的访问，我们常用H
 
 #### Text类型
 Text表示文本节点，它包含的是纯文本内容，不能包含html代码，但可以包含转义后的html代码。Text有下面的特性：
-（1）nodeType为3
-（2）nodeName为#text
-（3）nodeValue为文本内容
-（4）parentNode是一个Element
-（5）没有子节点
 
-#### Attr类型
-Attr类型表示元素的特性，相当于元素的attributes属性中的节点，它有下面的特性：
-（1）nodeType值为2
-（2）nodeName是特性的名称
-（3）nodeValue是特性的值
-（4）parentNode为null
+1. nodeType为3
+2. nodeName为#text
+3. nodeValue为文本内容
+4. parentNode是一个Element
+5. 没有子节点
 
 #### Comment类型
 Comment表示HTML文档中的注释，它有下面的几种特征：
-（1）nodeType为8
-（2）nodeName为#comment
-（3）nodeValue为注释的内容
-（4）parentNode可能是Document或Element
-（5）没有子节点
+
+1. nodeType为8
+2. nodeName为#comment
+3. nodeValue为注释的内容
+4. parentNode可能是Document或Element
+5. 没有子节点
 
 #### Document
 Document表示文档，在浏览器中，document对象是HTMLDocument的一个实例，表示整个页面，它同时也是window对象的一个属性。Document有下面的特性：
-（1）nodeType为9
-（2）nodeName为#document
-（3）nodeValue为null
-（4）parentNode为null
-（5）子节点可能是一个DocumentType或Element
+
+1. nodeType为9
+2. nodeName为#document
+3. nodeValue为null
+4. parentNode为null
+5. 子节点可能是一个DocumentType或Element
+
+```
+window.document.nodeType === 9
+window.document.nodeName === #document
+window.document.nodeValue === null
+window.document.parentNode === null
+```
+
+#### DOCUMENT_TYPE
+```
+window.document.childNodes[0].nodeType === 10
+window.document.childNodes[0].nodeName === html
+```
 
 #### DocumentFragment类型
 DocumentFragment是所有节点中唯一一个没有对应标记的类型，它表示一种轻量级的文档，可能当作一个临时的仓库用来保存可能会添加到文档中的节点。DocumentFragment有下面的特性：
-（1）nodeType为11
-（2）nodeName为#document-fragment
-（3）nodeValue为null
-（4）parentNode为null
+
+1. nodeType为11
+2. nodeName为#document-fragment
+3. nodeValue为null
+4. parentNode为null
 
 我们简单地介绍了几种常见的Node类型，要记住，HTML中的节点并不只是包括元素节点，它还包括文本节点，注释节点等等。在这里我们只是简单地说明了几种常见的节点，想要进一步学习的同学可以查找一下相关资料。
 
@@ -92,6 +113,7 @@ DocumentFragment是所有节点中唯一一个没有对应标记的类型，它�
 #### createElement
 createElement通过传入指定的一个标签名来创建一个元素，如果传入的标签名是一个未知的，则会创建一个自定义的标签，注意：IE8以下浏览器不支持自定义标签。
 使用如下：
+
 ```
 var div = document.createElement("div");
 ```
@@ -99,6 +121,7 @@ var div = document.createElement("div");
 
 #### createTextNode
 createTextNode用来创建一个文本节点，用法如下：
+
 ```
 var textNode = document.createTextNode("一个TextNode");  
 ```
@@ -106,48 +129,37 @@ createTextNode接收一个参数，这个参数就是文本节点中的文本，
 
 #### cloneNode
 cloneNode是用来返回调用方法的节点的一个副本，它接收一个bool参数，用来表示是否复制子元素，使用如下：
+
 ```
-	var parent = document.getElementById("parentElement"); 
-	var parent2 = parent.cloneNode(true);// 传入true
-	parent2.id = "parent2";
+var parent = document.getElementById("parentElement"); 
+var parent2 = parent.cloneNode(true);// 传入true
+parent2.id = "parent2";
 ```
 这段代码通过cloneNode复制了一份parent元素，其中cloneNode的参数为true，表示parent的子节点也被复制，如果传入false，则表示只复制了parent节点。
-我们看看这个[例子](http://runjs.cn/detail/s2yelqet)
-```
-<div id="parent">
-    我是父元素的文本
-    <br/>
-    <span>
-        我是子元素
-    </span>
-</div>
-<button id="btnCopy">复制</button>
+我们看看这个[createElement, createTextNode, cloneNode示例](http://js.jirengu.com/dewin/34/edit)
 
-var parent = document.getElementById("parent");
-document.getElementById("btnCopy").onclick = function(){
-	var parent2 = parent.cloneNode(true);
-	parent2.id = "parent2";
-	document.body.appendChild(parent2);
-}
-```
-这段代码很简单，主要是绑定button事件，事件内容是复制了一个parent，修改其id，然后添加到文档中。
 这里有几点要注意：
-（1）和createElement一样，cloneNode创建的节点只是游离有html文档外的节点，要调用appendChild方法才能添加到文档树中
-（2）如果复制的元素有id，则其副本同样会包含该id，由于id具有唯一性，所以在复制节点后必须要修改其id
-（3）调用接收的bool参数最好传入，如果不传入该参数，不同浏览器对其默认值的处理可能不同
+1. 和createElement一样，cloneNode创建的节点只是游离有html文档外的节点，要调用appendChild方法才能添加到文档树中
+2. 如果复制的元素有id，则其副本同样会包含该id，由于id具有唯一性，所以在复制节点后必须要修改其id
+3. 调用接收的bool参数最好传入，如果不传入该参数，不同浏览器对其默认值的处理可能不同
 
 除此之外，我们还有一个需要注意的点：
 如果被复制的节点绑定了事件，则副本也会跟着绑定该事件吗？这里要分情况讨论：
-（1）如果是通过addEventListener或者比如onclick进行绑定事件，则副本节点不会绑定该事件
-（2）如果是内联方式绑定比如 
+1. 如果是通过addEventListener或者比如onclick进行绑定事件，则副本节点不会绑定该事件
+2. 如果是内联方式绑定比如 
+
 ```
-<div onclick="showParent()"></div>
+function showMsg() {
+  console.log(1);
+}
+<div onclick="showMsg()"></div>
 ```
 这样的话，副本节点同样会触发事件。
 
 #### createDocumentFragment 
 createDocumentFragment方法用来创建一个DocumentFragment。在前面我们说到DocumentFragment表示一种轻量级的文档，它的作用主要是存储临时的节点用来准备添加到文档中。
-createDocumentFragment方法主要是用于添加大量节点到文档中时会使用到。假设要循环一组数据，然后创建多个节点添加到文档中，比如[示例](http://runjs.cn/detail/nu4wptvl)
+createDocumentFragment方法主要是用于添加大量节点到文档中时会使用到。假设要循环一组数据，然后创建多个节点添加到文档中
+
 ```
 <ul id="list"></ul>
 <input type="button" value="添加多项" id="btnAdd" />
@@ -177,13 +189,14 @@ document.getElementById("btnAdd").onclick = function(){
 	list.appendChild(fragment);
 }
 ```
-优化后的代码主要是创建了一个fragment，每次生成的li节点先添加到fragment，最后一次性添加到list，大家可以看[示例](http://runjs.cn/detail/nu4wptvl)
+优化后的代码主要是创建了一个fragment，每次生成的li节点先添加到fragment，最后一次性添加到list，大家可以看[fragment示例](http://js.jirengu.com/gajah/13/edit)
 
 #### 创建型API总结
 创建型api主要包括createElement，createTextNode，cloneNode和createDocumentFragment四个方法，需要注意下面几点：
-（1）它们创建的节点只是一个孤立的节点，要通过appendChild添加到文档中
-（2）cloneNode要注意如果被复制的节点是否包含子节点以及事件绑定等问题
-（3）使用createDocumentFragment来解决添加大量节点时的性能问题
+
+1. 它们创建的节点只是一个孤立的节点，要通过appendChild添加到文档中
+2. cloneNode要注意如果被复制的节点是否包含子节点以及事件绑定等问题
+3. 使用createDocumentFragment来解决添加大量节点时的性能问题
 
 ### 页面修改型API
 前面我们提到创建型api，它们只是创建节点，并没有真正修改到页面内容，而是要调用appendChild来将其添加到文档树中。我在这里将这类会修改到页面内容归为一类。
@@ -191,27 +204,42 @@ document.getElementById("btnAdd").onclick = function(){
 
 #### appendChild
 appendChild我们在前面已经用到多次，就是将指定的节点添加到调用该方法的节点的子元素的末尾。调用方法如下：
+
 ```
 parent.appendChild(child);
 ```
 child节点将会作为parent节点的最后一个子节点。
-appendChild这个方法很简单，但是还有有一点需要注意：如果被添加的节点是一个页面中存在的节点，则执行后这个节点将会添加到指定位置，其原本所在的位置将移除该节点，也就是说不会同时存在两个该节点在页面上，相当于把这个节点移动到另一个地方。我们来看[例子](http://runjs.cn/detail/kk3bodpw)
-```
-<div id="child">
-    要被添加的节点
-</div>
-<br/>
-<br/>
-<br/>
-<div id="parent">
-    要移动的位置
-</div>		
-<input id="btnMove" type="button" value="移动节点" />
+appendChild这个方法很简单，但是还有有一点需要注意：如果被添加的节点是一个页面中存在的节点，则执行后这个节点将会添加到指定位置，其原本所在的位置将移除该节点，也就是说不会同时存在两个该节点在页面上，相当于把这个节点移动到另一个地方。我们来看[appendChild例子](http://js.jirengu.com/kifeb/9/edit?html,js,output)
 
-document.getElementById("btnMove").onclick = function(){
-	var child = document.getElementById("child");
-	document.getElementById("parent").appendChild(child);
+```
+<div id="parent">子节点要移动到这里</div>
+<br>
+<div>中间节点</div>
+<br>
+<div id="child">我是要被移动的节点</div>
+<button onclick="move()">move</button>
+
+// 普通的appendChild用法
+var div = document.createElement('div');
+div.textContent = 'hi';
+document.body.appendChild(div);
+
+
+function move() {
+  parent = document.querySelector('#parent');
+  child = document.querySelector('#child');
+
+  parent.appendChild(child);
 }
+
+child.onclick = function() {
+  console.log('2');
+}
+
+child.addEventListener('click', function() {
+  console.log('3');
+})
+
 ```
 这段代码主要是获取页面上的child节点，然后添加到指定位置，可以看到原本的child节点被移动到parent中了。
 这里还有一个要注意的点：如果child绑定了事件，被移动时，它依然绑定着该事件。
@@ -224,29 +252,31 @@ parentNode.insertBefore(newNode,refNode);
 parentNode表示新节点被添加后的父节点
 newNode表示要添加的节点
 refNode表示参照节点，新节点会添加到这个节点之前
-我们来看这个[例子](http://runjs.cn/detail/p2rs1tmy)
-```
-<div id="parent">
-    父节点
-    <div id="child">				
-        子元素
-    </div>
-</div>
-<input type="button" id="insertNode" value="插入节点" />
+我们来看这个[insertBefore例子](http://js.jirengu.com/noqus/16/edit)
 
-var parent = document.getElementById("parent");
-var child = document.getElementById("child");
-document.getElementById("insertNode").onclick = function(){
-	var newNode = document.createElement("div");
-	newNode.textContent = "新节点"
-	parent.insertBefore(newNode,child);
+```
+  <div id="parent">子节点要插入到这里
+    <div id=child>我是子节点</div>
+  </div>
+  <button onclick="insert()">insert</button>
+
+function insert() {
+  parent = document.querySelector('#parent');
+  child = document.querySelector('#child');
+  
+  // 普通的insertBefore用法
+  var div = document.createElement('div');
+  div.textContent = 'hi'; 
+
+  // 父节点.insertBefore(待插入的节点，相对节点)
+  parent.insertBefore(div, child);
 }
 ```
 这段代码创建了一个新节点，然后添加到child节点之前。
 和appendChild一样，如果插入的节点是页面上的节点，则会移动该节点到指定位置，并且保留其绑定的事件。
 
 关于第二个参数参照节点还有几个注意的地方：
-（1）refNode是必传的，如果不传该参数会报错
+（1）refNode是必传的，如果不传该参数会报错（两个参数都必传）
 （2）如果refNode是undefined或null，则insertBefore会将节点添加到子元素的末尾
 
 #### removeChild
@@ -254,7 +284,7 @@ removeChild顾名思义，就是删除指定的子节点并返回，用法如下
 ```
 var deletedChild = parent.removeChild(node);
 ```
-deletedChild指向被删除节点的引用，它等于node，被删除的节点仍然存在于内存中，可以对其进行下一步操作。
+deletedChild指向被删除节点的引用，它等于node，被删除的节点仍然存在于内存中，可以对其进行下一步操作。[removeChild例子](http://js.jirengu.com/rolin/3/edit)
 注意：如果被删除的节点不是其子节点，则程序将会报错。我们可以通过下面的方式来确保可以删除：
 ```
 if(node.parentNode){
@@ -288,7 +318,7 @@ oldChild是被替换的节点
 （3）只从文档中进行搜索元素，如果创建了一个元素并指定id，但并没有添加到文档中，则这个元素是不会被查找到的
 
 #### document.getElementsByTagName
-这个接口根据元素标签名获取元素，返回一个即时的HTMLCollection类型，什么是即时的HTMLCollection类型呢？我们来看看这个[示例](http://runjs.cn/detail/13jvrs9t)
+这个接口根据元素标签名获取元素，返回一个即时的HTMLCollection类型，什么是即时的HTMLCollection类型呢？我们来看看这个[示例](http://js.jirengu.com/lekor/1/edit)
 ```
 <div>div1</div>
 <div>div2</div>
@@ -315,12 +345,15 @@ document.getElementById("btnShowCount").onclick = function(){
 
 #### document.getElementsByName
 getElementsByName主要是通过指定的name属性来获取元素，它返回一个即时的NodeList对象。
+[示例](http://js.jirengu.com/gepud/2/edit)
+
 使用这个接口主要要注意几点：
 （1）返回对象是一个即时的NodeList，它是随时变化的
 （2）在HTML元素中，并不是所有元素都有name属性，比如div是没有name属性的，但是如果强制设置div的name属性，它也是可以被查找到的
 （3）在IE中，如果id设置成某个值，然后传入getElementsByName的参数值和id值一样，则这个元素是会被找到的，所以最好不好设置同样的值给id和name
 
 #### document.getElementsByClassName
+[示例](http://js.jirengu.com/lovur/1/edit)
 这个API是根据元素的class返回一个即时的HTMLCollection，用法如下
 ```
 var elements = document.getElementsByClassName(names);
@@ -334,10 +367,11 @@ var elements = document.getElementsByClassName("test1 test2");
 ```
 
 #### document.querySelector和document.querySelectorAll
-这两个api很相似，通过css选择器来查找元素，注意选择器要符合[CSS选择器](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors)的规则。
+这两个api很相似，通过css
+器来查找元素，注意选择器要符合[CSS选择器](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors)的规则。
 首先来介绍一下document.querySelector。
 document.querySelector返回第一个匹配的元素，如果没有匹配的元素，则返回null。
-注意，由于返回的是第一个匹配的元素，这个api使用的深度优先搜索来获取元素。我们来看这个[例子](http://runjs.cn/detail/dl1uvbtq)：
+注意，由于返回的是第一个匹配的元素，这个api使用的深度优先搜索来获取元素。我们来看这个[例子](http://js.jirengu.com/herip/1/edit)：
 ```
 <div>
     <div>
@@ -356,7 +390,7 @@ document.getElementById("btnGet").addEventListener("click",function(){
 ```
 这个例子很简单，就是两个class都包含“test”的元素，一个在文档树的前面，但是它在第三级，另一个在文档树的后面，但它在第一级，通过querySelector获取元素时，它通过深度优先搜索，拿到文档树前面的第三级的元素。
 
-document.querySelectorAll的不同之处在于它返回的是所有匹配的元素，而且可以匹配多个选择符，我们来看看下面这个[例子](http://runjs.cn/detail/egu0tjoj)
+document.querySelectorAll的不同之处在于它返回的是所有匹配的元素，而且可以匹配多个选择符，我们来看看下面这个[例子](http://js.jirengu.com/cosis/1/edit?html,js,output)
 ```
 <div class="test">
     class为test
@@ -386,7 +420,17 @@ document.getElementById("btnShow").addEventListener("click",function(){
 parentNode：每个节点都有一个parentNode属性，它表示元素的父节点。Element的父节点可能是Element，Document或DocumentFragment。
 parentElement：返回元素的父元素节点，与parentNode的区别在于，其父节点必须是一个Element，如果不是，则返回null
 
+[例子](http://js.jirengu.com/wovuc/1/edit)
+
+div nodeType === 1
+div.parentNode === body nodeType === 1 // 这里可以用parentELement
+div.parentNode.parentNode === body nodeType === 1 // 这里可以用parentELement
+div.parentNode.parentNode.parentNode === html nodeType === 1 // 这里可以用parentELement
+div.parentNode.parentNode.parentNode.parent === document nodeType === 9 // 这里父元素是document，用parentELement返回的是null，
+
 #### 兄弟关系型api
+[例子](http://js.jirengu.com/nijoq/3/edit)
+
 previousSibling：节点的前一个节点，如果该节点是第一个节点，则为null。注意有可能拿到的节点是文本节点或注释节点，与预期的不符，要进行处理一下。
 previousElementSibling：返回前一个元素节点，前一个节点必须是Element，注意IE9以下浏览器不支持。
 
@@ -394,6 +438,7 @@ nextSibling：节点的后一个节点，如果该节点是最后一个节点，
 nextElementSibling：返回后一个元素节点，后一个节点必须是Element，注意IE9以下浏览器不支持。
 
 #### 子关系型api
+[例子](http://js.jirengu.com/nijoq/5/edit)
 childNodes：返回一个即时的NodeList，表示元素的子节点列表，子节点可能会包含文本节点，注释节点等。
 children：一个即时的HTMLCollection，子节点都是Element，IE9以下浏览器不支持。
 firstNode：第一个子节点
