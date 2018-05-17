@@ -25,12 +25,13 @@ const server = http.createServer((request, response) => {
     const path = request.url;
     const parsedUrl = url.parse(path, true);
     const query = path.indexOf('?') >= 0 ? path.substring(path.indexOf('?')) : ''; // http://www.baidu.com/query?name=XXX => name=XXX
-    const pathNoQuery = parsedUrl.pathName; // 不包含查询
+    const pathNoQuery = parsedUrl.pathname; // 不包含查询
     const queryObject = parsedUrl.query; // 查询参数
     const method = request.method; // 请求方法
 
     console.log('HTTP 路径为: ' + path);
-    switch (path) {
+    console.log(parsedUrl);
+    switch (pathNoQuery) {
         case '/':
             response.setHeader('Content-type', 'text/html; charset=utf-8');
             const html = '<!DOCTYPE>' +
@@ -47,6 +48,13 @@ const server = http.createServer((request, response) => {
             response.setHeader('Content-type', 'text/javascript; charset=utf-8');
             response.write('alert("第一个node.js服务器！");');
             break;
+	case '/getFromZSL':
+	    let callbackName = queryObject.callback;
+            response.setHeader('Content-Type', 'application/javascript');
+            response.write(`
+                ${callbackName}.call(undefined, '这是一个从www.zhengshengliang.com返回的字符串');
+            `);
+            response.end();	
         default:
             response.statusCode = 404;
     }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+  JSONP
+</body>
+</html>
+
+<script type="text/javascript">
+	const sc = document.createElement('script');
+	sc.src = 'http://www.zhengshengliang.com:9999/getFromZSL?callback=getData'
+	// sc.src = 'http://localhost:9999/getFromZSL?callback=getData'
+
+	document.body.appendChild(sc);
+
+	function getData() {
+	  const res = arguments[0];
+	  alert(res);
+	  sc.remove();
+	}
+</script>
