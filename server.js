@@ -48,13 +48,14 @@ const server = http.createServer((request, response) => {
             response.setHeader('Content-type', 'text/javascript; charset=utf-8');
             response.write('alert("第一个node.js服务器！");');
             break;
-	case '/getFromZSL':
-	    let callbackName = queryObject.callback;
-            response.setHeader('Content-Type', 'application/javascript');
-            response.write(`
-                ${callbackName}.call(undefined, '这是一个从www.zhengshengliang.com返回的字符串');
-            `);
+		case '/getFromZSL':
+			let callbackName = queryObject.callback;
+			response.setHeader('Content-Type', 'application/javascript');
+			response.write(`
+				${callbackName}.call(undefined, '这是一个从www.zhengshengliang.com返回的字符串');
+			`);
             response.end();	
+			
         default:
             response.statusCode = 404;
     }
